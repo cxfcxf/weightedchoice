@@ -1,7 +1,6 @@
 package wc
 
 import (
-    "fmt"
     "sort"
     "math/rand"
 )
