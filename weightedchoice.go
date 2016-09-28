@@ -1,4 +1,4 @@
-package wc
+package weightedchoice
 
 import (
     "sort"
@@ -9,7 +9,7 @@ type WeightedChoice struct {
     Weights []int
 }
 
-func (wc *WeightedChoice) linear() interface{} {
+func (wc *WeightedChoice) Linear() interface{} {
         var totals []int
         running_total := 0
 
@@ -27,7 +27,7 @@ func (wc *WeightedChoice) linear() interface{} {
         return nil
 }
 
-func (wc *WeightedChoice) binarySearch() interface{} {
+func (wc *WeightedChoice) BinarySearch() interface{} {
     totals := []int{}
     running_total := 0
 
@@ -41,7 +41,7 @@ func (wc *WeightedChoice) binarySearch() interface{} {
     return wc.Weights[i]
 }
 
-func (wc *WeightedChoice) linearNoTotals() interface {} {
+func (wc *WeightedChoice) LinearNoTotals() interface {} {
     running_totals := 0
     for _, v := range wc.Weights {
         running_totals += v
@@ -56,7 +56,7 @@ func (wc *WeightedChoice) linearNoTotals() interface {} {
     return nil
 }
 
-func (wc *WeightedChoice) kingOftheHill() interface{} {
+func (wc *WeightedChoice) KingOftheHill() interface{} {
     total, rnd := 0, 0
     for i, w := range wc.Weights {
         total += w
